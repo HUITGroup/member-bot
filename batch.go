@@ -19,12 +19,11 @@ func batch(dg *discordgo.Session) {
 }
 
 func isBatchTime() bool {
-	//	location := time.FixedZone("Asia/Tokyo", 9*60*60)
-	//	rawNowTime := time.Now().In(location)
-	//	nowHour := rawNowTime.Format("15")
-	//
-	//	return nowHour == "14"
-	return true
+	location := time.FixedZone("Asia/Tokyo", 9*60*60)
+	rawNowTime := time.Now().In(location)
+	nowHour := rawNowTime.Format("15")
+
+	return nowHour == "14"
 }
 
 func trialMemberBatch(dg *discordgo.Session) {
