@@ -16,7 +16,7 @@ https://discord.com/developers/applications/ からBotのトークンを取得�
     MODERATORS_CHANNEL_ID=<管理者用チャンネルのID(kick前日やkickした日に連絡が行く)>
     ```
 
-1. docker-compose で MYSQL と一緒に起動
+1. docker-compose で起動
 
     ```bash
     $ docker-compose up -d
