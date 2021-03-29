@@ -21,10 +21,10 @@ func handleJoin(s *discordgo.Session, member *discordgo.GuildMemberAdd) {
 	log.Println("join: ", member.Member.User.Username)
 
 	// 体験入部期間
-	trialPeriodDays := 45 /* day */
+	trialPeriodMonth := 2 /* month */
 
 	location := time.FixedZone("Asia/Tokyo", 9*60*60)
-	rawLimitDay := time.Now().In(location).AddDate(0, 0, trialPeriodDays)
+	rawLimitDay := time.Now().In(location).AddDate(0, trialPeriodMonth, 0)
 	limitDay := rawLimitDay.Format("2006/01/02")
 
 	guild, err := s.Guild(member.GuildID)
