@@ -37,9 +37,6 @@ func main() {
 		return
 	}
 
-	// バッチ処理
-	go batch(dg)
-
 	log.Println("Bot is now running. Press Ctrl-C to exit")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, os.Interrupt)
