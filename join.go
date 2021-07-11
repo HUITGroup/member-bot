@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"time"
 
 	"github.com/bwmarrin/discordgo"
@@ -9,6 +10,8 @@ import (
 
 // join時
 func handleJoin(s *discordgo.Session, member *discordgo.GuildMemberAdd) {
+	guestRoleID := os.Getenv("GUEST_ROLE_ID")
+
 	if member.User.ID == s.State.User.ID {
 		return
 	}
@@ -33,6 +36,9 @@ func handleJoin(s *discordgo.Session, member *discordgo.GuildMemberAdd) {
 		return
 	}
 	guildJoinChannelID := guild.SystemChannelID
+
+	// Guestロールを追加
+	s.GuildMemberRoleAdd(member.GuildID, member.User.ID, guestRoleID)
 
 	// yyyy/mm/dd という名前の権限を追加
 	// 同名のロールがある場合、そのロールを付与(同日に複数人が入ってくるとロールが重複するため)
