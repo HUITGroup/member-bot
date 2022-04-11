@@ -59,7 +59,7 @@ func handleJoin(s *discordgo.Session, member *discordgo.GuildMemberAdd) {
 	// joinチャンネルにようこそメッセージと、体験入部期間を通知
 	limitDayContent := rawLimitDay.Format("2006年1月2日")
 	mention := member.User.Mention()
-	content := mention + " さん、HUITにようこそ！\n体験入部期間は " + limitDayContent + " までとなります。"
+	content := mention + " さん、HUITにようこそ！\n体験入部期間は " + limitDayContent + " までとなります。\n #ようこそ！ を読んで、活動に楽しくご参加ください！"
 	s.ChannelMessageSend(guildJoinChannelID, content)
 }
 
