@@ -1,11 +1,11 @@
-module github.com/shoumoji/discord-timeline
+module github.com/shoumoji/huit-member-bot
 
-go 1.15
+go 1.21
+
+require github.com/bwmarrin/discordgo v0.27.1
 
 require (
-	github.com/bwmarrin/discordgo v0.23.2
 	github.com/gorilla/websocket v1.4.2 // indirect
-	github.com/joho/godotenv v1.3.0
-	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
+	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b // indirect
 	golang.org/x/sys v0.0.0-20210324051608-47abb6519492 // indirect
 )
